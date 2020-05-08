@@ -1,0 +1,12 @@
+.fadeInTop {
+  animation-name: fadeInTop;
+}
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
