@@ -97,7 +97,7 @@ li {
   display: grid;
   grid-template-columns: minmax(auto, 1250px);
   justify-content: center;
-  padding: 12em 7em 6em 7em;
+  padding: 11em 7em 6em 7em;
 }
 .AboutUs-content {
   display: flex;
@@ -108,7 +108,8 @@ li {
   text-align: center;
 }
 .AboutUs-content-description h2 {
-  padding-bottom: 1em;
+  padding-bottom: 0.25em;
+  color: #2da63d;
 }
 .AboutUs-content-image {
   box-shadow: -5px -5px 10px 0px rgba(168, 168, 168, 1);
@@ -126,7 +127,8 @@ li {
 }
 .Clients-container h2 {
   text-align: center;
-  padding-bottom: 1em;
+  padding-bottom: 0.25em;
+  color: #2da63d;
 }
 .Clients-content {
   display: grid;
