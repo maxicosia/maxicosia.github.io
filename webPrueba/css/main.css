@@ -1,0 +1,47 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: url("../images/background.svg") no-repeat;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+  margin-left: 80px;
+}
+
+nav ul {
+  display: flex;
+  text-decoration: none;
+}
+
+nav li {
+  padding-left: 80px;
+  padding-right: 80px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  text-align: center;
+  margin-top: 15%;
+}
