@@ -1,0 +1,158 @@
+
+*{
+    margin: 0%;
+}
+
+.header{
+    position: absolute;
+}
+
+.imgHeaderGrande{
+    display: none;
+    width: 100%;
+}
+
+.imgHeaderChico{
+    display: none;
+    width: 100%;
+}
+
+.imgHeaderChicoVerde{
+    display: block;
+    width: 100%;
+}
+
+.menu{
+    font-family: 'Niramit', sans-serif;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    /* margin-left: 2%; */
+    text-align: center;
+    font-size: 15px;
+}
+
+section{
+    /* width: 100%; */
+    font-family: 'Niramit', sans-serif;
+    background-color: rgb(186, 250, 200);
+    padding: 2%;
+    text-align: center;
+}
+
+h2{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 18px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+hr{
+    margin: 3%;
+}
+
+table, th, td{
+    border: 1px solid black;
+    font-size: 11px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    background-color: rgb(92, 202, 78);
+}
+
+nav{
+    text-align: center;
+}
+
+#grafica{
+    width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+    .imgHeaderChico{
+        display: block;
+    }
+    .imgHeaderChicoVerde{
+        display: none;
+    }
+    section{
+        background-color: rgb(186, 208, 250);
+    }
+    footer{
+        background-color: rgb(78, 117, 202);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .imgHeaderChicoVerde{
+        display: none;
+    }
+    h2{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    br{
+        content: "";
+    }
+    table, th, td{
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .imgHeaderGrande{
+        display: block;
+    }
+    .imgHeaderChico{
+        display: none;
+    }
+    .imgHeaderChicoVerde{
+        display: none;
+    }
+    .menu{
+        text-align: initial;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-left: 2%;
+        font-size: 1em;
+    }
+    section{
+        margin-left: 3%;
+        margin-right: 3%;
+        text-align: initial;
+    }
+    h2{
+        font-size: 30px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    br{
+        content: "";
+    }
+    nav{
+        text-align: initial;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-left: 2%;
+        font-size: 1em;
+    }
+    ul{
+    list-style-type: initial;
+}
+    table, th, td{
+        margin-left: 0%;
+        margin-right: 0%;
+        font-size: 1em;
+    }
+}

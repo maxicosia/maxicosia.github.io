@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ObligatorioP1</title>
+    <!--JS-->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/funciones.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css?family=Mada:700%7CNiramit&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--TOPE-->
+    <a id="tope"></a>
+
+    <!--HEADER-->
+    <header >
+        <div class="container">
+            <img class="imgHeaderGrande" src="img/bannerGrande.png" alt="forHeader">
+            <img class="imgHeaderChico" src="img/bannerChico.png" alt="forHeader">
+            <img class="imgHeaderChicoVerde" src="img/bannerChicoo.png" alt="forHeader">
+        </div>
+    </header>
+    <nav class="menu">
+        <a href="#operadores">Operadores</a>
+        <a href="#llamadas">Llamadas</a>
+        <a href="#consultas">Consultas</a>
+    </nav>
+
+    <!--SECCION 1: OPERADORES-->
+    <section>
+        <a id="operadores"></a>
+        <h2><ins>Manejo de Operadores</ins></h2>
+
+        <!--1.1 Donde se registraran los operadores-->
+        <h3>Registro de operadores</h3>
+
+        <form id="formRegistroOperador">
+            <label for="nombreRegistroOperador">Nombre:</label>
+            <input type="text" id="nombreRegistroOperador" maxlength="20" placeholder="Nombre">
+
+            <br>
+
+            <label for="edadRegistroOperador">Edad:</label>
+            <input type="number" id="edadRegistroOperador" placeholder="Edad" min="18" max="65">
+            
+            <br>
+            
+            <label for="mailRegistroOperador">Mail:</label>
+            <input type="text" id="mailRegistroOperador" placeholder="E-Mail">
+            
+            <br>
+            
+            <input type="button" value="Agregar" id="agregarOperador">
+        </form>
+
+        <!--1.2 Donde se visualizan los operadores-->
+        <h3>Visualización de Operadores</h3>
+
+        <label>Orden: </label>
+        <div style="display: inline-block">
+            <input type="radio" name="radioOrdenOperadores" id="radioNombre" checked> <label
+                for="radioNombre">Nombre</label>
+        </div>
+        <input type="radio" name="radioOrdenOperadores" id="radioEdad">Edad
+
+        <!--Visualizacion de operadores-->
+        <ul id="visualOperadores">
+        </ul>
+
+        <hr>
+
+        <!--SECCION 2: LLAMADAS-->
+        <a id="llamadas"></a>
+        <h2><ins>Manejo de llamadas</ins></h2>
+
+        <!--2.1 Registro llamadas-->
+        <h3>Registro de llamadas</h3>
+
+        <!--A base de JS, se agregan los operadores en el Select-->
+
+        <form id="formRegistroLlamadas">
+            <label for="operadorLlamadas">Operador:</label>
+
+            <select name="selectOperador" id="operadorLlamadas" >
+
+            </select>
+            <br>
+            <label for="descripcionLlamadas">Descripción:</label>
+            <input type="text" id="descripcionLlamadas" placeholder="Descripción" required>
+            <br>
+            <label for="motivoLlamadas">Motivo:</label>
+            <input type="number" id="motivoLlamadas" min="1" max="6" value="1" required>
+            <br>
+            <label for="duracionLlamadas">Duración:</label>
+            <input type="number" id="duracionLlamadas" min="1" max="60" value="1" required>
+            <br>
+            <label for="celularLlamadas">Celular:</label>
+            <input type="tel" id="celularLlamadas" minlength="9" maxlength="9" required>
+            <br>
+            <input type="button" value="Agregar" id="agregarLlamadas">
+        </form>
+        <!--2.2 Muestra de llamadas-->
+        <h3>Muestra de Llamadas</h3>
+
+        <!--Otro selector de orden en visualizacion-->
+        <label>Orden:</label>
+        <input type="radio" name="radioOrdenLlamadas" id="radioNumero" checked>Número
+        <input type="radio" name="radioOrdenLlamadas" id="radioNombreNumero">Nombre/Número
+
+        <!--TABLA-->
+        <table id="tablaLlamadas">
+            <thead>
+                <tr>
+                    <th>NUMERO</th>
+                    <th>OPERADOR</th>
+                    <th>DESCRIPCION</th>
+                    <th>MOTIVO</th>
+                    <th>DURACION</th>
+                    <th>CELULAR</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTablaLlamadas">
+
+            </tbody>
+        </table>
+
+        <hr>
+
+        <!--SECCION 3: CONSULTAS-->
+        <h2><ins>Consultas</ins></h2>
+
+        <!--Consultas por operadores-->
+        <a id="consultas"></a>
+        <h3>Consulta por operador</h3>
+
+        <label for="consultaOperador">Operador: </label>
+        <select name="selectConsultaOperador" id="consultaOperador">
+        </select>
+
+        <input type="button" id="botonConsultaHistoriaOperador" value="Consultar historia">
+
+        <br>
+
+        <!--Boton? Que carajo?-->
+        <label>Motivos no atendió:</label>
+
+        <div class="motivo" style="display: inline-block">
+            <img src="img/1.png" class="azul" id="uno" alt="1" height="20" width="20">
+
+            <img src="img/2.png" class="azul" id="dos" alt="2" height="20" width="20">
+
+            <img src="img/3.png" class="azul" id="tres" alt="3" height="20" width="20">
+
+            <img src="img/4.png" class="azul" id="cuatro" alt="4" height="20" width="20">
+
+            <img src="img/5.png" class="azul" id="cinco" alt="5" height="20" width="20">
+
+            <img src="img/6.png" class="azul" id="seis" alt="6" height="20" width="20">
+        </div>
+
+        <p id="largoLlamada">Haga click en "Consultar historia" para solicitar la llamada mas larga.</p>
+        <p id="promedioLlamada">Haga click en "Constultar historia" para solicitar el promedio de llamadas.</p>
+
+        <!--Consultas por llamadas-->
+        <h3>Consultas por llamadas</h3>
+
+        <label for="duracionLlamadaConsultas">Duración:</label>
+        <input type="number" id="duracionLlamadaConsultas" min="1" max="60" value="1">
+
+        <input type="button" id="botonConsultarDuracion" value="Consultar operadores más llamadas de esa duración">
+
+        <ul id="listaConsultarDuracion">
+        </ul>
+
+        <label for="palabraConsultas">Palabras:</label>
+        <input type="text" id="palabraConsultas">
+        <input type="button" id="botonPalabraConsultas" value="Consultar Palabras">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>NUMERO</th>
+                    <th>OPERADOR</th>
+                    <th>DESCRIPCION</th>
+                    <th>MOTIVO</th>
+                    <th>DURACION</th>
+                    <th>CELULAR</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTablaPalabras">
+                
+            </tbody>
+        </table>
+
+        <br>
+
+        <button id="distribucionConsultas">Distribución de llamadas</button>
+        <div id="grafica">
+
+        </div>
+    </section>
+    
+    <nav class="tope">
+        <a href="#tope">Ir al tope</a>
+    </nav>
+
+    <!--Footer-->
+    <footer>
+        <p>Obligatorio de Programación 1 - 1er semestre 2019 - Cátedra de Programación</p>
+    </footer>
+</body>
+</html>
