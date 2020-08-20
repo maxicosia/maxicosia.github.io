@@ -15,6 +15,7 @@
 
 h2,
 span,
+label,
 li {
   font-family: "Lato", sans-serif;
   /* color: rgba(38, 38, 38, 0.7); */
@@ -188,4 +189,29 @@ input[type="button"] {
   color: white;
   border: none;
   padding: 10px 15px;
+}
+
+/* -------------- ARTICLES -------------- */
+/* -------------------------------------- */
+/* -------------- CONTACT --------------- */
+
+.ContactInfo {
+  width: 100%;
+}
+
+.ContactInfo-container {
+  text-align: center;
+}
+
+.ContactInfo-container h2 {
+  color: #2da63d;
+  padding-bottom: 0.25em;
+}
+
+.ContactInfo-content {
+  border-top: 1px solid rgba(38, 38, 38, 0.4);
+  border-bottom: 1px solid rgba(38, 38, 38, 0.4);
+  background-color: rgb(242, 242, 242);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+  padding: 0.5em;
 }
