@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  padding: 10em 0 8em 0;
+}
+
+h2 {
+  color: #2da63d;
+  margin-bottom: 1em;
+}
+
+/* .image-container {
+  box-shadow: -5px -5px 10px 0px rgba(168, 168, 168, 1);
+} */
+
+@media only screen and (max-width: 991px) {
+  .container {
+    padding: 5em 0;
+  }
+
+  .text-container {
+    padding-bottom: 1em;
+  }
+}
