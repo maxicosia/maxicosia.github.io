@@ -1,0 +1,140 @@
+a) Dado un id de un artista, retornar el costo final de todas sus grabaciones
+
+Sistema
+public double CostoFinal(int idArtista){
+double costo=0;
+Artista artistaBuscado=BuscarArtista(idArtista);
+if(artistaBuscado!=null){
+costo=artistaBuscado.CalcularCosto();
+}
+return costo;
+}
+
+private Artista BuscarArtista(int idArtista){
+int i=0;
+Artista artistaBuscado=null;
+while(i<artistas.Count && artistaBuscado==null){
+if(artistas[i].Id==idArtista){
+artistaBuscado=artistas[i];
+}
+i++;
+}
+return artistaBuscado;
+}
+
+Artista
+public abstract double CalcularCosto();
+
+public double CalcularCostoGrabacionesArtista(){
+double costo=0;
+foreach(Grabacion miGrabacion in grabaciones){
+costo+=miGrabacion.CalcularCostoGrabacion();
+}
+return costo;
+}
+
+ArtistaRegistrado
+public override double CalcularCosto(){
+double costo=base.CalcularCostoGrabacionesArtista();
+double aniosAntiguedad=this.CalcularAntiguedad();
+if(aniosAntiguedad>=1&& aniosAntiguedad<2){
+costo=costo*0.90;
+}
+else if(aniosAntiguedad>=2 && aniosAntiguedad<3){
+costo=costo *0.80;
+}
+else if(aniosAntiguedad>=3){
+costo=costo*0.70;
+}
+return costo;
+}
+
+public double CalcularAntiguedad(){
+double difDias=DateTime.Now.Substract(fechaRegistro).TotalDays;
+return difDias/365;
+}
+
+ArtistaOcasional
+public override double CalcularCosto(){
+double costo=base.CalcularCostoGrabacionesArtista();
+if(esUruguayo){
+costo=costo * 0.90;
+}
+else{
+costo=costo *0.95;
+}
+return costo;
+}
+
+Grabacion
+public double CalcularCostoGrabacion(){
+double costoGrabacion=estudio.CalcularCostoEstudio(cantPistas);
+return costoGrabacion;
+}
+
+Estudio
+public double CalcularCostoEstudio(int cantPistas){
+double costo=cantPistas * precioPista;
+costo+=cantTecnicos * 1000;
+if(exclusivo){
+costo=costo * 1.20;
+}
+return costo;
+}
+
+
+Requerimiento b 
+b) Dada dos fechas, retornar una lista de los artistas que hayan grabado en esas fechas. No deben repetirse los
+artistas. 
+//Recorro en sistema los artistas 
+//Por cada artista le pregunto si tiene grabaciones entre esas fechas
+//si tiene, agrego ese artista a la lista de retorno
+
+Sistema
+public List<Artista>ArtistasConGrabacionesEntreFechas(DateTime fechaDesde,
+DateTime fechaHasta){
+List<Artista>artistasConGrabaciones = new List<Artista>();
+foreach(Artista miArtista in artistas){
+bool tieneGrabaciones=miArtista.TieneGrabacionesEntreFechas(fechaDesde,
+fechaHasta);
+if(tieneGrabaciones){
+if(!artistasConGrabaciones.Contains(miArtista)){
+artistasConGrabaciones.Add(miArtista);
+}
+}
+}
+return artistasConGrabaciones;
+}
+
+Artista
+public bool TieneGrabacionesEntreFechas(DateTime fechaDesde, DateTime fechaHasta){
+int i=0;
+bool tieneGrabaciones=false;
+while(i<grabaciones.Count && !tieneGrabaciones){
+if(grabaciones[i].Fecha>=fechaDesde && grabaciones[i].Fecha <=fechaHasta){
+tieneGrabaciones=true;
+}
+i++;
+}
+return tieneGrabaciones;
+}
+
+c) Indicar el/los estudios que tengan la mayor cantidad de técnicos. 
+
+Sistema
+public List<Estudio>EstudiosConMasTecnicos(){
+List<Estudio>estudiosMayoreTecnicos = new List<Estudio>();
+int mayorCantidad=-1;
+foreach(Estudio miEstudio in estudios){
+if(miEstudio.CantTecnicos > mayorCantidad){
+mayorCantidad=miEstudio.CantTecnicos;
+estudiosMayoreTecnicos.Clear();
+estudiosMayoreTecnicos.Add(miEstudio);
+}
+else if(miEstudio.CantTecnicos==mayorCantidad){
+estudiosMayoreTecnicos.Add(miEstudio);
+}
+}
+return estudiosMayoreTecnicos;
+}
+

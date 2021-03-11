@@ -1,0 +1,106 @@
+Solucion 12/06/2019-M2A
+
+. Dado el nombre artístico de un artista, retornar el costo mensual del mismo.
+
+Requerimiento a
+
+Productora
+public double CostoMensualArtista(string nombreArtistico){
+	double costo=0;
+	Artista artistaBuscado=BuscarArtista(nombreArtistico);
+	if(artistaBuscado!=null){
+		costo=artistaBuscado.CalcularCostoMensual();
+	}
+	return costo;
+}
+
+private Artista BuscarArtista(string nombreArtistico){
+	Artista miArtista=null;
+	int i=0;
+	while(i<artistas.Count && miArtista==null){
+		if(artistas[i].NombreArtistico==nombreArtistico){
+			miArtista=artistas[i];
+		}
+	i++;
+	}
+return miArtista;
+}
+
+Artista
+public double CalcularCostoFijoArtista(){
+	return discos.Count * costoFijo;
+}
+
+public abstract double CalcularCostoMensual();
+
+Solista
+public override double CalcularCostoMensual(){
+	double costo = base.CalcularCostoFijoArtista();
+	if(exclusividad){
+		costo=costo*1.14;
+	}
+	return costo;
+}
+
+Grupo
+public override double CalcularCostoMensual(){
+	double costo=base.CalcularCostoFijoArtista();
+	if(cantIntegrantes>4){
+		costo=costo * 1.13;
+	}
+	else{
+		costo=costo * 1.164;
+	}
+	return costo;
+}
+
+Dada dos fechas, devolver una lista con todos los grupos creados dentro de ese
+intervalo
+
+Productora
+public List<Artista>GruposCreadosEntreFechas(DateTime fechaDesde, DateTime fechaHasta){
+	List<Artista>artistasEntreFechas=new List<Artista>();
+	foreach(Artista miArtista in artistas){
+		if(miArtista is Grupo){
+			//Grupo miGrupo = (Grupo)miArtista;
+			//if(miGrupo.FechaAgrupamiento
+			if(((Grupo)miArtista).FechaAgrupamiento >=fechaDesde && ((Grupo)miArtista).FechaAgrupamiento<=fechaHasta){
+				artistasEntreFechas.Add(miArtista);
+			}
+		}
+	}
+	return artistasEntreFechas;
+}
+
+Requerimiento c
+
+Obtener el o los discos con mayor cantidad de canciones 
+
+Productora
+public List<Disco>DiscosConMasCanciones(){
+	List<Disco>discosMasCanciones=new List<Disco>();
+	int mayorCantidadCanciones=-1;
+	foreach(Disco miDisco in discos){
+		int cantCancionesDelDisco=miDisco.ObtenerCantidadCanciones();
+		if(cantCancionesDelDisco>mayorCantidadCanciones){
+			mayorCantidadCanciones=cantCancionesDelDisco;
+			discosMasCanciones.Clear();
+			discosMasCanciones.Add(miDisco);
+		}
+		else if(cantCancionesDelDisco==mayorCantidadCanciones){
+			discosMasCanciones.Add(miDisco);
+		}
+	}
+	return discosMasCanciones;
+}
+
+Disco
+public int ObtenerCantidadCanciones(){
+	return this.canciones.Count;
+}
+
+
+
+
+
+ 

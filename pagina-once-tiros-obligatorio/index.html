@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+    <title>Once Tiros</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="headerContent">
+        <div class="headerContent-logo">
+          <a href="./index.html"><img src="images/once-tiros.png" alt="logoOnceTiros" height="100px" /></a>
+        </div>
+        <div class="logoContent-spotify">
+          <span>Escuchar en</span>
+          <a href="https://open.spotify.com/artist/7w79n5kCkTEaewxNBynvhM" target="blank"><img
+            src="images/spotify.png"
+            alt="logoSpotify"
+            height="50px"
+            style="vertical-align: middle"
+          /></a>
+      </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav>
+      <ul>
+        <li><a href="./index.html" id="active">HOLA</a></li>
+        <li class="liMedio"><a href="./conocenos.html">CONOCENOS</a></li>
+        <li><a href="#">TIENDA</a></li>
+      </ul>
+    </nav>
+
+    <!-- BIENVENIDA -->
+    <section class="bienvenidaContainer">
+      <div class="bienvenidaContent">
+        <article class="bienvenida">
+          <h2>Hola!</h2>
+          <p>Once Tiros es una banda de rock montevideana formada a fines de los noventa. En sus primeros años, y debido a las múltiples influencias musicales de sus integrantes, 
+          el grupo transitó por varios géneros, teniendo como base fundamental el ska-punk.</p> 
+        </article>
+      </div>
+    </section>
+
+    <!-- NOTICIAS -->
+    <section class="noticiasContainer">
+      <div class="noticiasContent">
+        <h2>Noticias</h2>
+        <div class="noticias">
+          <article class="noticia">
+            <img src="images/noticia1.png" title="Noticia1" alt="noticia1" width="300px">
+            <div class="noticiaTexto">
+              <h3 class="tituloNoticia">Marcelo D2, Las Pelotas, Eli Almic y Once Tiros tocan gratis en el Parque Batlle</h3>
+              <p class="parrafoNoticia">El sábado 7 y domingo 8 de diciembre se realizará MOJO, la segunda edición de la la Bienal de la Juventud de Montevideo, con mucha música</p>
+              <a href="https://www.tvshow.com.uy/musica/marcelo-d2-pelotas-eli-almic-once-tiros-tocan-gratis-parque-batlle.html" target="blank">AMPLIAR</a>
+            </div>
+          </article>
+          <article class="noticia">
+            <img src="images/noticia2.png" title="Noticia2" alt="noticia2" width="300px">
+            <div class="noticiaTexto">
+              <h3 class="tituloNoticia">Once Tiros vuelve a La Trastienda y Pablo Silvera habla de televisión, croquetas y rock</h3>
+              <p class="parrafoNoticia">"La locura de la cocina la comparto con la música", dice el cantante que se prueba en varios rubros</p>
+              <a href="https://www.tvshow.com.uy/musica/once-tiros-vuelve-trastienda-pablo-silvera-habla-television-croquetas-rock.html" target="blank">AMPLIAR</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="agendaContainer">
+      <div class="agendaContent">
+        <h2>Agenda</h2>
+        <div class="agenda">
+          <div class="eventos">
+            <h3>Eventos</h3>
+            <table>
+              <tr style="background-color:#e0e0e0;">
+                <th width="150px" >Fecha</th>
+                <th width="150px" >Hora</th>
+                <th width="450px" >Lugar</th>
+              </tr>
+              <tr style="background-color:#d0d1d3;">
+                <td>25/11/2020</td>
+                <td>19:00</td>
+                <td>Antel Arena</td>
+              </tr>
+              <tr style="background-color:#e0e0e0;">
+                <td>05/11/2020</td>
+                <td>21:00</td>
+                <td>Antel Arena</td>
+              </tr>
+              <tr style="background-color:#d0d1d3;">
+                <td>16/01/2021</td>
+                <td>16:00</td>
+                <td>Antel Arena</td>
+              </tr>
+              <tr style="background-color:#e0e0e0;">
+                <td>12/02/2021</td>
+                <td>19:00</td>
+                <td>Antel Arena</td>
+              </tr>
+            </table>
+          </div>
+          <div class="tickets">
+            <h3>Comprar tickets</h3>
+            <form action="none">
+              <div class="primerLineaTickets">
+                <div class="nombrePrimerLineaTickets">
+                  <p>Nombre y apellido (*)</p>
+                  <input type="text" size="24" required>
+                </div>
+                <div class="cantidadPrimerLineaTickets">
+                  <p>Cantidad (*)</p>
+                  <input type="text" size="10" required>
+                </div>
+              </div>
+              <div class="segundaLineaTickets">
+                <p>Evento (*)</p>
+                <select name="evento" class="selectEvento">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="tercerLineaTickets">
+                <div class="formaPagoTercerLineaTickets">
+                  <p>Forma de pago</p>
+                  <input type="radio" name="pago" value="credito" id="credito" checked>
+                  <label for="credito">Crédito</label>
+                  <input type="radio" name="pago" value="debito" id="debito">
+                  <label for="debito">Débito</label>
+                </div>
+                <input type="button" value="COMPRAR">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="redes">
+        <span>Seguinos!</span>
+        <a href="https://www.instagram.com/oncetiroscomuy/" target="blank"><img src="./images/instagram.png" alt="logoInstagram" style="margin:5px"></a>
+        <a href="https://twitter.com/OnceTirosComUy" target="blank"><img src="./images/twitter.png" alt="logoTwitter" style="margin:5px"></a>
+        <a href="https://www.facebook.com/OnceTirosComUy/" target="blank"><img src="./images/facebook.png" alt="logoFacebook" style="margin:5px"></a>
+      </div>
+    </footer>
+  </body>
+</html>

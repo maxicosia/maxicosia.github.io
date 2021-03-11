@@ -1,0 +1,36 @@
+* {
+  font-family: "Martel", serif;
+}
+
+h1 {
+  color: rgb(216, 92, 21);
+}
+h2 {
+  color: rgb(21, 81, 160);
+  padding: 50px 0px;
+}
+
+.div-logo {
+  border-bottom: 20px solid rgb(21, 81, 160);
+}
+
+.logo {
+  padding: 20px;
+}
+
+ul {
+  background-color: rgb(216, 92, 21);
+}
+
+ul li {
+  padding: 50px;
+  list-style: none;
+}
+
+footer {
+  background-color: rgb(21, 81, 160);
+}
+
+footer div {
+  padding-top: 10px;
+}
